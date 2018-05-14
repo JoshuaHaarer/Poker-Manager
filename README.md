@@ -20,4 +20,4 @@ With our **Poker Manager**, you can manage a vairety of tasks when it comes to h
 - Add or remove players from your tables
 - Have a timer to increment rounds
 - Pause the current game
-- Increment rounds manuallyy
+- Increment rounds manually
