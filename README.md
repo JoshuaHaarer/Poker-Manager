@@ -3,7 +3,7 @@
 
 This application is designed to be your best friend, if you like gambling of course. 
 
-With our **Poker Manager**, you can manage a vairety of tasks when it comes to hosting your very own table(s). 
+With our **Poker Manager**, you can manage a variety of tasks when it comes to hosting your very own table(s). 
 
 ## What this app does
 
