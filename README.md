@@ -1,4 +1,4 @@
-# Poker Manager
+# :clubs: Poker Manager
 
 
 This application is designed to be your best friend, if you like gambling of course. 
