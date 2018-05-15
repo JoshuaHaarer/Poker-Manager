@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Poker Tournament Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./layouts/style.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="app">
+            <div class="main-heading">
+                <label> Poker Tournament Manager</label>
+            </div>
+            <div class="timer">
+            </div>
+            <div class="tournament-settings">
+                <div class="tournament-settings-item">
+                    <label>Entries</label>
+                    <input type="number" class="form-control" name="playersCounter">
+                </div>
+                <div class="tournament-settings-item">
+                    <label>Players in the Game</label>
+                    <input type="number" class="form-control" name="currentPlayersCounter">
+                </div>
+                <div class="tournament-settings-item">
+                    <label>Buy-in</label>
+                    <input type="number" class="form-control" name="buyIn">
+                </div>
+                <div class="tournament-settings-item">
+                    <label>Starting Chips</label>
+                    <input type="number" class="form-control" name="startingChips">
+                </div>
+                <div class="tournament-settings-item">
+                    <label>Level Duration (sec)</label>
+                    <input type="number" class="form-control" name="blindTime">
+                </div>
+                <div class="blinds-structure-caption">Small/Big B                                                                                                                               linds
+
+                </div>
+
+                <div class="buttons-block">
+                    <button class="btn btn-primary" @click="startPause">Start</button>
+                    <button class="btn btn-success" @click="settingsShowed = true">Settings</button>
+                </div>
+            </div>
+  <!-- for updating stats later         <div class="table-block">
+                    <div class="table-block-item">
+                        <span class="caption">Total Players in the game:</span>
+                        <nobr>{{playersCounter}} / {{currentPlayersCounter}}</nobr>
+                    </div>
+                    <div class="table-block-item">
+                        <span class="caption">Buy-in:</span> {{buyIn}}
+                    </div>
+                    <div class="table-block-item">
+                        <span class="caption">Prize pool:</span> {{prizePool}}
+                    </div>
+                    <div class="table-block-item">
+                        <span class="caption">Starting chips:</span> {{startingChips}}
+                    </div>
+                    <div class="table-block-item">
+                        <span class="caption">Average stack:</span> {{averageStack}}
+                    </div>
+                    <div class="table-block-item">
+                        <span class="caption">Level:</span> {{blindsCounter}}
+                    </div>
+                    <div class="table-block-item">
+                        <span class="caption">Level duration (sec):</span> {{blindTime}}
+                    </div>
+                    <div class="table-block-item">
+                        <span class="caption">Next Blinds: </span>
+                    </div>
+                    <div class="table-block-item prizes">
+                        <div class="caption">Prizes</div>
+                        
+                    </div>
+                </div> -->
+
+        </div>
+    </div>
+
+</body>
+
+</html>
