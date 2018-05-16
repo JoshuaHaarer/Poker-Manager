@@ -1,5 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
-    var Profile = sequelize.define("Profile", {
+
+    var Profile = sequelize.define("playerProfile", {
+
         playerName: {
             type: DataTypes.STRING,
             allowNull: false,

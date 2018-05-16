@@ -13,7 +13,7 @@ module.exports = function(app) {
 
     //GET route for all profiles
     app.get('/api/profiles', function(req, res) {
-        db.Profile.findAll({})
+        db.playerProfile.findAll({})
         .then(function(dbProfile) {
             res.json(dbProfile)
         })
@@ -33,7 +33,7 @@ module.exports = function(app) {
 
     //POST route for new profile
     app.post('/api/profiles', function(req, res) {
-        db.Profile.create({
+        db.playerProfile.create({
             playerName : req.body.playerName,
             nickName : req.body.nickName,
             totalWins : req.body.totalWins,
