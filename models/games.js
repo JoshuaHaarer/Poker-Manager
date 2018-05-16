@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Games = sequelize.define("games", {
+    var Games = sequelize.define("Games", {
         gameType: {
             type: DataTypes.STRING,
             allowNull: false,

@@ -17,13 +17,19 @@
   },
   "homepage": "https://github.com/JoshuaHaarer/Poker-Manager#readme",
   "dependencies": {
+<<<<<<< HEAD
     "bootstrap": "^4.1.1",
+=======
+    "body-parser": "^1.18.3",
+>>>>>>> 41ad43cc0a744b19022493ce303aa2e576cf902e
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.11",
     "inquire": "^0.4.8",
     "lodash": "^4.17.10",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.3",
+    "sequelize": "^4.37.7"
   },
   "devDependencies": {
     "chai": "^4.1.2",
