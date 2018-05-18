@@ -35,22 +35,8 @@ module.exports = function (app) {
         });
     });
 
-    //POST route for new profile
-    // app.post('/api/profiles', function (req, res) {
-    //     db.playerProfile.create({
-    //         playerName: req.body.playerName,
-    //         nickName: req.body.nickName,
-    //         totalWins: req.body.totalWins,
-    //         knockouts: req.body.knockouts,
-    //         ranking: req.body.ranking,
-    //         bounties: req.body.bounties
-    //     }).then(function (dbProfile) {
-    //         res.json(dbProfile)
-    //     });
-    // });
-
     // Register User
-    app.post('/register', function (req, res) {
+    app.post('/api/profiles/create', function (req, res) {
         var email = req.body.email;
         var username = req.body.username;
         var password = req.body.password;
@@ -89,25 +75,19 @@ module.exports = function (app) {
     });
     passport.use(new LocalStrategy(
         function (username, password, done) {
-            User.getUserByUsername(username, function (err, user) {
-                if (err) throw err;
-                if (!user) {
-                    return done(null, false, {
-                        message: 'User does not exist!'
-                    });
+            db.Profile.findOne({where: {
+                username : username
+            }}).then(function(user) {
+                if (user == null) {
+                    return done(null, false, {message: 'User not found'})
                 }
 
-                User.comparePassword(password, user.password, function (err, isMatch) {
-                    if (err) throw err;
-                    if (isMatch) {
-                        return done(null, user);
-                    } else {
-                        return done(null, false, {
-                            message: 'Invalid password'
-                        });
-                    }
-                });
-            });
+                if (user.password == password) {
+                    return done(null, user)
+                }
+
+                return done(null, false, { message: 'Incorrect credentials.'})
+            })
         }));
 
     passport.serializeUser(function (user, done) {
@@ -115,9 +95,17 @@ module.exports = function (app) {
     });
 
     passport.deserializeUser(function (id, done) {
-        User.getUserById(id, function (err, user) {
-            done(err, user);
-        });
+        db.Profile.findOne({
+            where: {
+                'id': id
+            }
+        }).then(function(user) {
+            if (user == null) {
+                done(new Error('Wrong user id.'))
+            }
+
+            done(null, user);
+        })
     });
     app.post('/login',
         passport.authenticate('local', {
