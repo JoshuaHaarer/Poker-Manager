@@ -1,0 +1,44 @@
+.wrapper {
+    padding: 20px;
+    max-width: 500px;
+    position: relative;
+}
+
+.tournament-settings, .main {
+    position: absolute;
+    width: auto;
+    margin-right:20px;
+    margin-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tournament-settings-item {
+    width: 33.3%;
+    padding: 20px;
+}
+
+.main-heading {
+
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+
+body {
+     
+        background: url(../../images/rick-in-rick-and-morty-xs.jpg);
+        background-repeat: no-repeat;
+        background-size: auto;
+        color: white;
+        padding: 20px;
+    max-width: 500px;
+    position: relative;
+    
+}
+
+#timer {
+    text-align: center;
+}
