@@ -37,13 +37,7 @@ module.exports = function(sequelize, DataTypes) {
                 len: [1]
             }
         },
-        bounties: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-            validate: {
-                len: [1]
-            }
-        }
+        
     });
     return Profile;
 };
