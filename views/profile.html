@@ -15,8 +15,9 @@
 </head>
 
 <body>
+  <body background="../images/redchips.jpg">
   <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 20px;">
-    <a class="navbar-brand" href="#">{{username}}</a>
+    <a class="navbar-brand" href="#">{{nickName}}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -74,25 +75,26 @@
                   <!-- /input-group -->
                 </div>
                 <div class="col-sm-6">
-                  <h4 style="color:#00b1b1;">{{{username}}}</h4>
+                  <h4 style="color:#00b1b1;">{{nickName}}</h4>
                   </span>
-                  <span>
-                    <p>Rank: {{{Rank}}}</p>
+                  <span style="color: gold;">
+                    <p>Rank: {{ranking}}</p>
                   </span>
                 </div>
                 <div class="clearfix"></div>
                 <hr style="margin:5px 0 5px 0;">
+                <div class = "text" style="color:aliceblue;">
 
 
-                <div class="col-sm-5 col-xs-6 tital ">First Name:</div>
-                <div class="col-sm-7 col-xs-6 ">{{{firstName}}}</div>
+                <div class="col-sm-5 col-xs-6 tital" style="color:#00b1b1;">First Name:</div>
+                <div class="col-sm-7 col-xs-6 ">{{playerFirstName}}</div>
                 <div class="clearfix"></div>
                 <div class="bot-border"></div>
 
 
 
-                <div class="col-sm-5 col-xs-6 tital ">Last Name:</div>
-                  <div class="col-sm-7">{{{lastName}}}</div>
+                <div class="col-sm-5 col-xs-6 tital "style="color:#00b1b1;">Last Name:</div>
+                  <div class="col-sm-7">{{playerLastName}}</div>
                 <div class="clearfix"></div>
                 <div class="bot-border"></div>
 
@@ -101,17 +103,18 @@
                 <div class="clearfix"></div>
                 <div class="bot-border"></div>
 
-                <div class="col-sm-5 col-xs-6 tital ">Total Wins: </div>
-                  <div class="col-sm-7">{{{wins}}}</div>
+                <div class="col-sm-5 col-xs-6 tital "style="color:#00b1b1;">Total Wins: </div>
+                  <div class="col-sm-7">{{totalWins}}</div>
 
                 <div class="clearfix"></div>
                 <div class="bot-border"></div>
 
-                <div class="col-sm-5 col-xs-6 tital ">Knockouts: </div>
-                <div class="col-sm-7">{{{knockouts}}}</div>
+                <div class="col-sm-5 col-xs-6 tital "style="color:#00b1b1;">Knockouts: </div>
+                <div class="col-sm-7">{{knockouts}}</div>
 
                 <div class="clearfix"></div>
                 <div class="bot-border"></div>
+                </div>
              
                 <!-- /.box-body -->
               </div>
