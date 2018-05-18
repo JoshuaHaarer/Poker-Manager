@@ -2,7 +2,14 @@ module.exports = function(sequelize, DataTypes) {
 
     var Profile = sequelize.define("playerProfile", {
 
-        playerName: {
+        playerFirstName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        playerLastName: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
