@@ -17,10 +17,7 @@
   },
   "homepage": "https://github.com/JoshuaHaarer/Poker-Manager#readme",
   "dependencies": {
-<<<<<<< HEAD
-=======
     "body-parser": "^1.18.3",
->>>>>>> 41ad43cc0a744b19022493ce303aa2e576cf902e
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.11",
