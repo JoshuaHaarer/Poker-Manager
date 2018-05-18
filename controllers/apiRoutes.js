@@ -40,7 +40,8 @@ module.exports = function (app) {
         var email = req.body.email;
         var username = req.body.username;
         var password = req.body.password;
-        var playerName = req.body.playerName;
+        var playerFirstName = req.body.playerFirstName;
+        var playerLastName = req.body.playerLastNamel
         var nickName = req.body.nickName;
 
         // Validation
@@ -48,7 +49,8 @@ module.exports = function (app) {
         req.checkBody('email', 'Email is required').notEmpty();
         req.checkBody('email', 'Email is not valid').isEmail();
         req.checkBody('password', 'Password is required').notEmpty();
-        req.checkBody('playerName', "Player name must not be blank").notEmpty();
+        req.checkBody('playerFirstName', "Player first name must not be blank").notEmpty();
+        req.checkBody('playerLastName', "Player last name must not be blank").notEmpty();
         req.checkBody('nickName', "Nick name must not be empty").notEmpty();
 
         var errors = req.validationErrors();
