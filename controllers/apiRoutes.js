@@ -1,6 +1,9 @@
 //Dependencies
 var db = require('../models');
 var passport = require("passport");
+var LocalStrategy = require('passport-local').Strategy;
+var expressValidator = require('express-validator');
+
 
 module.exports = function (app) {
 
@@ -33,30 +36,34 @@ module.exports = function (app) {
     });
 
     //POST route for new profile
-    app.post('/api/profiles', function (req, res) {
-        db.playerProfile.create({
-            playerName: req.body.playerName,
-            nickName: req.body.nickName,
-            totalWins: req.body.totalWins,
-            knockouts: req.body.knockouts,
-            ranking: req.body.ranking,
-            bounties: req.body.bounties
-        }).then(function (dbProfile) {
-            res.json(dbProfile)
-        });
-    });
+    // app.post('/api/profiles', function (req, res) {
+    //     db.playerProfile.create({
+    //         playerName: req.body.playerName,
+    //         nickName: req.body.nickName,
+    //         totalWins: req.body.totalWins,
+    //         knockouts: req.body.knockouts,
+    //         ranking: req.body.ranking,
+    //         bounties: req.body.bounties
+    //     }).then(function (dbProfile) {
+    //         res.json(dbProfile)
+    //     });
+    // });
 
     // Register User
     app.post('/register', function (req, res) {
         var email = req.body.email;
         var username = req.body.username;
         var password = req.body.password;
+        var playerName = req.body.playerName;
+        var nickName = req.body.nickName;
 
         // Validation
         req.checkBody('username', 'Username is Required').notEmpty();
         req.checkBody('email', 'Email is required').notEmpty();
         req.checkBody('email', 'Email is not valid').isEmail();
         req.checkBody('password', 'Password is required').notEmpty();
+        req.checkBody('playerName', "Player name must not be blank").notEmpty();
+        req.checkBody('nickName', "Nick name must not be empty").notEmpty();
 
         var errors = req.validationErrors();
 
@@ -65,19 +72,19 @@ module.exports = function (app) {
                 errors: errors
             });
         } else {
-            var newUser = new User({
+            db.playerProfile.create({
                 email: email,
                 username: username,
                 password: password,
+                playerName: playerName,
+                nickName: nickName,
+                totalWins: req.body.totalWins,
+                knockouts: req.body.knockouts,
+                ranking: req.body.ranking,
+                bounties: req.body.bounties
+            }).then(function (dbProfile) {
+                res.json(dbProfile)
             });
-
-            User.createUser(newUser, function (err, user) {
-                if (err) throw err;
-                console.log(user);
-            });
-
-            req.flash('success_msg', 'You are now registered. Log In!');
-            res.redirect('/users/login');
         }
     });
     passport.use(new LocalStrategy(
