@@ -5,7 +5,11 @@ This application is designed to be your best friend, if you like gambling of cou
 
 With our **Poker Manager**, you can manage a variety of tasks when it comes to hosting your very own table(s). 
 
+
+
 ## What this app does
+
+
 
 ### Allows you to manage your very own poker game 
 
@@ -16,6 +20,8 @@ With our **Poker Manager**, you can manage a variety of tasks when it comes to h
 - Features the total ammount in the pot real-time
 
 ## You can
+- Either be a player, or a manager.
+### As a manager..
 - Create up to **(insert table limit here)** tables
 - Add or remove players from your tables
 - Pause the current game
