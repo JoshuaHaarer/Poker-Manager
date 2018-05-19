@@ -21,6 +21,7 @@ With our **Poker Manager**, you can manage a variety of tasks when it comes to h
 
 ## You can
 - Either be a player, or a manager.
+
 ### As a manager..
 - Create up to **(insert table limit here)** tables
 - Add or remove players from your tables
