@@ -1,4 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
+    
 
     var Profile = sequelize.define("playerProfile", {
 
@@ -16,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
                 len: [1]
             }
         },
-            playerLastName: {
+        playerLastName: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
@@ -62,6 +63,13 @@ module.exports = function(sequelize, DataTypes) {
         },
         ranking: {
             type: DataTypes.INTEGER,
+            allowNull: true,
+            validate: {
+                len: [1]
+            }
+        },
+        profilePic: {
+            type: DataTypes.STRING,
             allowNull: true,
             validate: {
                 len: [1]

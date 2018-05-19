@@ -7,12 +7,26 @@ var expressValidator = require('express-validator');
 
 module.exports = function (app) {
 
+
     //GET route for all games
     app.get('/api/games', function (req, res) {
         db.Games.findAll({})
             .then(function (dbGame) {
                 res.json(dbGame)
             })
+    });
+    app.get('/profile/:id', function (req, res) {
+        var id = req.params.id;
+
+        db.playerProfile.findOne({
+            where: {
+                id: id
+            },
+        })
+            .then(function(results){
+                res.render('../views/profile.handlebars', results)
+            })
+           
     });
 
     //GET route for all profiles
@@ -69,7 +83,6 @@ module.exports = function (app) {
                 totalWins: req.body.totalWins,
                 knockouts: req.body.knockouts,
                 ranking: req.body.ranking,
-                bounties: req.body.bounties
             }).then(function (dbProfile) {
                 res.json(dbProfile)
             });

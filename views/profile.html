@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.amd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+
+  <title>{{username}}</title>
+</head>
+
+<body>
+
+  <body background="../images/redchips.jpg">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 20px;">
+      <a class="navbar-brand" href="#">{{nickName}}</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-7 ">
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+
+            </div>
+            <div class="panel-body">
+
+              <div class="box box-info">
+
+                <div class="box-body">
+                  <div class="col-sm-6">
+                    <div align="center">
+                      <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1"
+                        class="img-circle img-responsive" style="max-width: 300px; max-height:300px; margin-bottom: 20px;">
+
+                      <div class="btn-group" style="margin:10px;">
+                       
+                        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+                          Profile Picture
+                          <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" style="width:100px;">
+                          <li>
+                            <a href="">
+                              <img src="../images/homer.jpg" style="max-width: 50px; max-height: 50px;" onclick='changeImage("../images/homer.jpg");' />
+                            </a>
+                          </li>
+                          <br>
+                         
+                          <li>
+                            <a href="">
+                              <img src="../images/freaky.jpg" style="max-width: 50px; max-height: 50px;" onclick='changeImage("../images/freaky.jpg");' />
+                            </a>
+                          </li>
+                          <br>
+                          
+                          <li>
+                            <a href="">
+                              <img src="../images/rick.png" style="max-width: 50px; max-height: 50px;"  onclick='changeImage("../images/rick.png");'/>
+                            </a>
+                          </li>
+                          <br>
+                          <li>
+                            <a href="">
+                              <img src="../images/tom.jpg" style="max-width: 50px; max-height: 50px;" onclick='changeImage("../images/tom.jpg");' />
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <script>
+                        function changeImage(a) {
+                          event.preventDefault();
+                          document.getElementById("profile-image1").src = a;
+                        }
+                        
+                      </script>
+
+                      <br>
+
+                      <!-- /input-group -->
+                    </div>
+                    <div class="col-sm-6">
+                      <h4 style="color:#00b1b1;">{{nickName}}</h4>
+                      </span>
+                      <span style="color: gold;">
+                        <p>Rank: {{ranking}}</p>
+                      </span>
+                    </div>
+                    <div class="clearfix"></div>
+                    <hr style="margin:5px 0 5px 0;">
+                    <div class="text" style="color:aliceblue;">
+
+
+                      <div class="col-sm-5 col-xs-6 tital" style="color:#00b1b1;">First Name:</div>
+                      <div class="col-sm-7 col-xs-6 ">{{playerFirstName}}</div>
+                      <div class="clearfix"></div>
+                      <div class="bot-border"></div>
+
+
+
+                      <div class="col-sm-5 col-xs-6 tital " style="color:#00b1b1;">Last Name:</div>
+                      <div class="col-sm-7">{{playerLastName}}</div>
+                      <div class="clearfix"></div>
+                      <div class="bot-border"></div>
+
+
+
+                      <div class="clearfix"></div>
+                      <div class="bot-border"></div>
+
+                      <div class="col-sm-5 col-xs-6 tital " style="color:#00b1b1;">Total Wins: </div>
+                      <div class="col-sm-7">{{totalWins}}</div>
+
+                      <div class="clearfix"></div>
+                      <div class="bot-border"></div>
+
+                      <div class="col-sm-5 col-xs-6 tital " style="color:#00b1b1;">Knockouts: </div>
+                      <div class="col-sm-7">{{knockouts}}</div>
+
+                      <div class="clearfix"></div>
+                      <div class="bot-border"></div>
+                    </div>
+
+                    <!-- /.box-body -->
+                  </div>
+                  <!-- /.box -->
+
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+          crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+          crossorigin="anonymous"></script>
+  </body>
+
+</html>
