@@ -1,0 +1,13 @@
+<div class="table" ng-controller="TableCtrl">
+    <header>
+        <span>Min Seats/Table:</span>
+        <input type="number" ng-model="options.seats" ng-init="options.seats=5" />
+        <button ng-click="generate()">Generate Tables</button>
+    </header>
+    <ul>
+        <li ng-repeat="table in tables">
+            <header>Table {{$index+1}}</header>
+            <div class="person" ng-repeat="person in table">{{person}}</div>
+        </li>
+    </ul>
+</div>
