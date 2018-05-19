@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.amd.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="../public/js/profile.js"></script>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
     crossorigin="anonymous">
@@ -18,7 +19,7 @@
 
   <body background="../images/redchips.jpg">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 20px;">
-      <a class="navbar-brand" href="#">{{nickName}}</a>
+      <a class="navbar-brand" href="#">{{username}}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -31,12 +32,12 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+          <li class="nav-item active profile">
+            <a class="nav-link" href="">Edit Profile
+              <span class="sr-only">(current)</span>
+            </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
+
         </ul>
 
       </div>
@@ -61,29 +62,32 @@
                         class="img-circle img-responsive" style="max-width: 300px; max-height:300px; margin-bottom: 20px;">
 
                       <div class="btn-group" style="margin:10px;">
-                       
-                        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+
+                        <a class="btn btn-primary dropdown-toggle profbutton" style="visibility: hidden;" data-toggle="dropdown" href="#">
                           Profile Picture
+
                           <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu" style="width:100px;">
+                        <ul class="dropdown-menu" style="width:100px; opacity: 1;">
                           <li>
                             <a href="">
-                              <img src="../images/homer.jpg" style="max-width: 50px; max-height: 50px;" onclick='changeImage("../images/homer.jpg");' />
+                              <img src="../images/homer.jpg" style="max-width: 50px; max-height: 50px; opacity: 1 !important;" onclick='changeImage("../images/homer.jpg");'
+                              />
                             </a>
                           </li>
                           <br>
-                         
+
                           <li>
                             <a href="">
-                              <img src="../images/freaky.jpg" style="max-width: 50px; max-height: 50px;" onclick='changeImage("../images/freaky.jpg");' />
+                              <img src="../images/freaky.jpg" style="max-width: 50px; max-height: 50px; " onclick='changeImage("../images/freaky.jpg");'
+                              />
                             </a>
                           </li>
                           <br>
-                          
+
                           <li>
                             <a href="">
-                              <img src="../images/rick.png" style="max-width: 50px; max-height: 50px;"  onclick='changeImage("../images/rick.png");'/>
+                              <img src="../images/rick.png" style="max-width: 50px; max-height: 50px;" onclick='changeImage("../images/rick.png");' />
                             </a>
                           </li>
                           <br>
@@ -94,13 +98,10 @@
                           </li>
                         </ul>
                       </div>
+                      <button type="button" class="btn btn-success saveProfile" style="visibility: hidden;">Save</button>
 
-                      <script>
-                        function changeImage(a) {
-                          event.preventDefault();
-                          document.getElementById("profile-image1").src = a;
-                        }
-                        
+
+
                       </script>
 
                       <br>
