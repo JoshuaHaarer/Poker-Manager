@@ -83,7 +83,6 @@ module.exports = function (app) {
                 totalWins: req.body.totalWins,
                 knockouts: req.body.knockouts,
                 ranking: req.body.ranking,
-                bounties: req.body.bounties
             }).then(function (dbProfile) {
                 res.json(dbProfile)
             });
