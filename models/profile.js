@@ -1,4 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
+    
 
     var Profile = sequelize.define("playerProfile", {
 
@@ -9,6 +10,21 @@ module.exports = function(sequelize, DataTypes) {
                 len: [1]
             }
         },
+        playerFirstName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        playerLastName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+      
         username : {
             type: DataTypes.STRING,
             allowNull: false,
@@ -23,14 +39,8 @@ module.exports = function(sequelize, DataTypes) {
                 len: [6]
             }
         },
-        playerName: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
-        },
         nickName: {
+          
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
@@ -58,13 +68,14 @@ module.exports = function(sequelize, DataTypes) {
                 len: [1]
             }
         },
-        bounties: {
-            type: DataTypes.INTEGER,
+        profilePic: {
+            type: DataTypes.STRING,
             allowNull: true,
             validate: {
                 len: [1]
             }
-        }
+        },
+        
     });
     return Profile;
 };

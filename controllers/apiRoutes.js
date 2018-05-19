@@ -7,12 +7,26 @@ var expressValidator = require('express-validator');
 
 module.exports = function (app) {
 
+
     //GET route for all games
     app.get('/api/games', function (req, res) {
         db.Games.findAll({})
             .then(function (dbGame) {
                 res.json(dbGame)
             })
+    });
+    app.get('/profile/:id', function (req, res) {
+        var id = req.params.id;
+
+        db.playerProfile.findOne({
+            where: {
+                id: id
+            },
+        })
+            .then(function(results){
+                res.render('../views/profile.handlebars', results)
+            })
+           
     });
 
     //GET route for all profiles
@@ -40,7 +54,8 @@ module.exports = function (app) {
         var email = req.body.email;
         var username = req.body.username;
         var password = req.body.password;
-        var playerName = req.body.playerName;
+        var playerFirstName = req.body.playerFirstName;
+        var playerLastName = req.body.playerLastName
         var nickName = req.body.nickName;
 
         // Validation
@@ -48,26 +63,28 @@ module.exports = function (app) {
         req.checkBody('email', 'Email is required').notEmpty();
         req.checkBody('email', 'Email is not valid').isEmail();
         req.checkBody('password', 'Password is required').notEmpty();
-        req.checkBody('playerName', "Player name must not be blank").notEmpty();
+        req.checkBody('playerFirstName', "Player first name must not be blank").notEmpty();
+        req.checkBody('playerLastName', "Player last name must not be blank").notEmpty();
         req.checkBody('nickName', "Nick name must not be empty").notEmpty();
 
         var errors = req.validationErrors();
 
         if (errors) {
-            res.render('register', {
-                errors: errors
-            });
+            // res.render('register', {
+            //     errors: errors
+            // });
+            console.log(errors);
         } else {
             db.playerProfile.create({
                 email: email,
                 username: username,
                 password: password,
-                playerName: playerName,
+                playerFirstName: playerFirstName,
+                playerLastName: playerLastName,
                 nickName: nickName,
                 totalWins: req.body.totalWins,
                 knockouts: req.body.knockouts,
                 ranking: req.body.ranking,
-                bounties: req.body.bounties
             }).then(function (dbProfile) {
                 res.json(dbProfile)
             });
@@ -116,5 +133,20 @@ module.exports = function (app) {
         function (req, res) {
             res.redirect('/profile')
 
+        });
+
+    app.put('/profile/update',
+        function(req, res) {
+            var profilePicture = req.body.profilePicture;
+            var nickName = req.body.nickName;
+            var id = req.body.id;
+            db.Profile.update({
+                profilePicture : profilePicture,
+                nickName : nickName
+            }, {
+                where : {
+                    id : id
+                }
+            })
         });
 }
