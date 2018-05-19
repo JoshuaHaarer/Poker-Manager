@@ -1,10 +1,13 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var expressValidator = require('express-validator');
 
 var PORT = process.env.PORT || 8080;
 
 var app = express();
 var db = require("./models");
+
+app.use(expressValidator());
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
