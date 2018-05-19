@@ -23,6 +23,7 @@ module.exports = function(sequelize, DataTypes) {
                 len: [1]
             }
         },
+      
         username : {
             type: DataTypes.STRING,
             allowNull: false,
@@ -38,6 +39,7 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         nickName: {
+          
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
