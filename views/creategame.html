@@ -50,7 +50,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <button type="button" class="btn btn-success" id="start-game">Start Game</button>
+                    <button type="button" class="btn btn-success" id="start-game">Create Tables</button>
                 </div>
             </div>
         </div>
@@ -70,11 +70,25 @@
                     button.text(profile.nickName);
                     button.addClass("btn btn-primary profile-button");
                     button.attr('data-id', profile.id);
+                    button.attr('data-selected', false)
                     $("#player-list").append(button);
                 });
 
-                
+                $(".profile-button").on('click', function (event) {
+                    var selected = $(this).attr('data-selected');
+
+                    if (selected === 'false') {
+                        $(this).attr('data-selected', true);
+                        $("#selected-players").append($(this));
+                    } else {
+                        $(this).attr('data-selected', false)
+                        $("#player-list").append($(this));
+                    }
+                    
+                });
             })
+
+
         })
     </script>
 </body>
