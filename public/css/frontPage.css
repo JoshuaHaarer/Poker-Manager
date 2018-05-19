@@ -1,5 +1,5 @@
 body{
-    background: url("../../images/green.jpg");
+    background-image: '../../images/green.jpg';
     background-size: cover;
     font-size: 35px;
     text-align: center;
