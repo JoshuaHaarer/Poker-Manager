@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" id="selected-players">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <form>
+                        <div class="form-group">
+                            <label for="gametype-select">Select Your GameType</label>
+                            <select multiple class="form-control" id="gametype-select">
+                                <option>Texas Hold-Em</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <form>
+                        <label for="min-players">Minimum Players per Table</label>
+                        <select class="form-control" id="min-players">
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" class="btn btn-success" id="start-game">Create Tables</button>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="player-list">
+
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "../api/profiles/",
+                method: 'GET'
+            }).then(function (results) {
+                results.forEach(function (profile) {
+                    console.log(profile);
+                    var button = $("<button>");
+                    button.text(profile.nickName);
+                    button.addClass("btn btn-primary profile-button");
+                    button.attr('data-id', profile.id);
+                    button.attr('data-selected', false)
+                    $("#player-list").append(button);
+                });
+
+                $(".profile-button").on('click', function (event) {
+                    var selected = $(this).attr('data-selected');
+
+                    if (selected === 'false') {
+                        $(this).attr('data-selected', true);
+                        $("#selected-players").append($(this));
+                    } else {
+                        $(this).attr('data-selected', false)
+                        $("#player-list").append($(this));
+                    }
+                    
+                });
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>

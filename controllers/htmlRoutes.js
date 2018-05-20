@@ -14,4 +14,8 @@ module.exports = function(app) {
     app.get('/creategame', function(req, res) {
         res.sendFile(path.join(__dirname + "/../views/creategame.html"));
     })
+
+    app.get('/createprofile', function(req, res) {
+        res.sendFile(path.join(__dirname + "/../views/user-input.html"));
+    })
 }

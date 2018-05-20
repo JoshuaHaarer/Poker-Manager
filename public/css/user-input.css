@@ -1,56 +1,7 @@
-body{
-    background-image: url("../../images/green.jpg");
-    background-size: cover;
-    font-size: 35px;
-    text-align: center;
+.container{
     align-content: center;
+    margin-left: 10%;
 }
-
-path {
-  fill: transparent;
-}
-
-text {
-  fill: #FF9800;
-  text-align: center;
-} 
-tspan:nth-child(1){
-    fill: black;
-    font-weight: bold
-  } 
-tspan:nth-child(2){
-    fill: red;
-    font-weight: bold
-  }
-  tspan:nth-child(3){
-    fill: black;
-    font-weight: bold
-  } 
-tspan:nth-child(4){
-    fill: red;
-    font-weight: bold
-  }
-  tspan:nth-child(5){
-    fill: black; 
-    
-  }
-   tspan:nth-child(6){
-    fill: black;
-    font-weight: bold
-  } 
-tspan:nth-child(7){
-    fill: red;
-    font-weight: bold
-  }
-  tspan:nth-child(8){
-    fill: black;
-    font-weight: bold
-  } 
-tspan:nth-child(9){
-    fill: red;
-    font-weight: bold
-  }  
-   
 
 .push_button {
     position: relative;
@@ -149,9 +100,3 @@ tspan:nth-child(9){
     background-image:-o-linear-gradient(top, #3EACBA, #48C6D4);
 }
 
-#buttons{
-    text-align: center;
-    align-content: center;
-    margin-left: 40%;
-    
-}
