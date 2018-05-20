@@ -55,7 +55,7 @@ module.exports = function (app) {
         var username = req.body.username;
         var password = req.body.password;
         var playerFirstName = req.body.playerFirstName;
-        var playerLastName = req.body.playerLastNamel
+        var playerLastName = req.body.playerLastName
         var nickName = req.body.nickName;
 
         // Validation
@@ -70,15 +70,17 @@ module.exports = function (app) {
         var errors = req.validationErrors();
 
         if (errors) {
-            res.render('register', {
-                errors: errors
-            });
+            // res.render('register', {
+            //     errors: errors
+            // });
+            console.log(errors);
         } else {
             db.playerProfile.create({
                 email: email,
                 username: username,
                 password: password,
-                playerName: playerName,
+                playerFirstName: playerFirstName,
+                playerLastName: playerLastName,
                 nickName: nickName,
                 totalWins: req.body.totalWins,
                 knockouts: req.body.knockouts,
@@ -131,5 +133,20 @@ module.exports = function (app) {
         function (req, res) {
             res.redirect('/profile')
 
+        });
+
+    app.put('/profile/update',
+        function(req, res) {
+            var profilePicture = req.body.profilePicture;
+            var nickName = req.body.nickName;
+            var id = req.body.id;
+            db.Profile.update({
+                profilePicture : profilePicture,
+                nickName : nickName
+            }, {
+                where : {
+                    id : id
+                }
+            })
         });
 }

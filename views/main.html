@@ -4,11 +4,12 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
     <title>Poker Tournament Manager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./layouts/style.css" />
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../public/js/player.js"></script>
     <script src="./assets/javascript/poker.js"></script>
 </head>
@@ -19,7 +20,8 @@
             <div class="main-heading">
                 <label> Poker Tournament Manager</label>
             </div>
-            <label id="minutes">00</label>:<label id="seconds">00</label>
+            <label id="minutes">00</label>:
+            <label id="seconds">00</label>
             <div class="tournament-settings">
                 <div class="tournament-settings-item">
                     <label>Entries</label>
@@ -51,33 +53,34 @@
                 </div>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                      <span class="input-group-text" id="">User/Nickname</span>
+                        <span class="input-group-text" id="">User/Nickname</span>
                     </div>
                     <input type="text" class="form-control">
                     <input type="text" class="form-control">
-                  </div>
+                </div>
             </div>
             <script>
-            var minutesLabel = document.getElementById("minutes");
-var secondsLabel = document.getElementById("seconds");
-var totalSeconds = 0;
-setInterval(setTime, 1000);
+                var minutesLabel = document.getElementById("minutes");
+                var secondsLabel = document.getElementById("seconds");
+                var totalSeconds = 0;
+                setInterval(setTime, 1000);
 
-function setTime() {
-  ++totalSeconds;
-  secondsLabel.innerHTML = pad(totalSeconds % 60);
-  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
-}
+                function setTime() {
+                    ++totalSeconds;
+                    secondsLabel.innerHTML = pad(totalSeconds % 60);
+                    minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+                }
 
-function pad(val) {
-  var valString = val + "";
-  if (valString.length < 2) {
-    return "0" + valString;
-  } else {
-    return valString;
-  }
-}</script>
-  <!-- for updating stats later         <div class="table-block">
+                function pad(val) {
+                    var valString = val + "";
+                    if (valString.length < 2) {
+                        return "0" + valString;
+                    } else {
+                        return valString;
+                    }
+                }
+            </script>
+            <!-- for updating stats later         <div class="table-block">
                     <div class="table-block-item">
                         <span class="caption">Total Players in the game:</span>
                         <nobr>{{playersCounter}} / {{currentPlayersCounter}}</nobr>
