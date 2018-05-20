@@ -4,34 +4,69 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
     <title>Poker Tournament Manager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../public/css/style.css" />
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../public/css/user-input.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../public/js/player.js"></script>
     <script src="./assets/javascript/poker.js"></script>
 </head>
-<body>
-<form id="user-input">
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputUserName">Username</label>
-      <input type="email" class="form-control" id="inputUserName" placeholder="Username">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputemail">Email</label>
-    <input type="text" class="form-control" id="inputemail" placeholder="E-Mail">
-  </div>
-  
-  
-    
-  <button type="submit" class="btn btn-primary">Sign in</button>
-</form>
 
-</body>
+<body style="align-content: center">
+
+    <body background="../images/redchips.jpg">
+        <div class = "container">
+        <form>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationDefault01" style="color: white">First name</label>
+                    <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="Jeffery" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationDefault02" style="color: white">Last name</label>
+                    <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="Lebowski" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationDefault03" style="color: white">User Name</label>
+                    <input type="text" class="form-control" id="validationDefault03" placeholder="User Name" value="The Dude" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1" style="color: white">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="inputPassword5" style="color: white">Password</label>
+                    <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                        Your password must be at least 6 characters long.
+                    </small>
+                </div>
+            </div>
+
+            <button class="btn btn-primary push_button red" type="submit">Submit Profile</button>
+        </form>
+        <br>
+        <br>
+        <form>
+            <div class = "row" id = "sign-in">
+            <div class="col-md-4 mb-3">
+                <label for="validationDefault04" style="color: white">Password</label>
+                <input type="text" class="form-control" id="validationDefault04" placeholder="password" value="" required>
+            </div>
+            <button class="btn btn-primary push_button blue" type="submit">Login</button>
+        </form>
+        </div>
+        </div>
+    </body>
