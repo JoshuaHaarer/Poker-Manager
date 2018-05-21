@@ -1,9 +1,9 @@
-module.exports = function(sequelize, DataTypes) {
-    
+module.exports = function (sequelize, DataTypes) {
+
 
     var Profile = sequelize.define("playerProfile", {
 
-        email : {
+        email: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
@@ -24,15 +24,14 @@ module.exports = function(sequelize, DataTypes) {
                 len: [1]
             }
         },
-      
-        username : {
+        username: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
-        password : {
+        password: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
@@ -40,7 +39,7 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         nickName: {
-          
+
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
@@ -75,7 +74,7 @@ module.exports = function(sequelize, DataTypes) {
                 len: [1]
             }
         },
-        
+
     });
     return Profile;
 };

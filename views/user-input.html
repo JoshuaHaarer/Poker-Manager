@@ -2,19 +2,22 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.amd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../public/js/profile.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
-    <title>Poker Tournament Manager</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/user-input.css" />
 
 </head>
 
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 20px;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 20px;" style="width:100%;">
         <a class="navbar-brand" href="#">Poker Manager</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -51,11 +54,11 @@
                     </div>
                 </div>
                 <div class="form-row">
-                        <div class="col-md-4 mb-3">
-                            <label for="validationDefault03" style="color: white">User Name</label>
-                            <input type="text" class="form-control" id="userName" placeholder="Account name" value="" required>
-                        </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault03" style="color: white">User Name</label>
+                        <input type="text" class="form-control" id="userName" placeholder="Account name" value="" required>
                     </div>
+                </div>
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
                         <label for="validationDefault01" style="color: white">First name</label>
@@ -68,7 +71,7 @@
                         <input type="text" class="form-control" id="lastName" placeholder="Last name" value="" required>
                     </div>
                 </div>
-                
+
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
                         <div class="form-group">
@@ -92,14 +95,14 @@
             <br>
             <br>
             <form>
-                <div class="row" id="sign-in">
+                <!-- <div class="row" id="sign-in">
                     <div class="col-md-4 mb-3">
                         <label for="validationDefault04" style="color: white">Password</label>
                         <input type="text" class="form-control" id="validationDefault04" placeholder="password" value="" required>
                     </div>
                     <button class="btn btn-primary push_button blue" type="submit">Login</button>
             </form>
-            </div>
+            </div> -->
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="js/player.js"></script>
