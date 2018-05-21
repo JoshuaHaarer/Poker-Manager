@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
     var url = window.location.search;
     var profileId;
     var updating = false;
@@ -8,30 +8,51 @@ $(document).ready(function(){
         getPostData(postId);
     }
 
-    var playerName = $("#playerName");
-    var nickName = $("#nickName");
-    var proForm = $("#proForm");
 
-    $(proForm).on("submit", function handleFormSubmit(event){
+
+
+    $(proForm).on("click", function () {
         event.preventDefault();
-        if (!playerName.val().trim()){
-            return;
-        }
-    
-    var newProfile = {
-        playerName: playerNameInput.val().trim(),
-        nickName: nickNameInput.val().trim()
-    };
 
-    console.log(newProfile);
+        var userName = $("#userName").val();
+        var nickName = $("#nickName").val();
+        var firstName = $("#firstName").val();
+        var lastName = $("#lastName").val();
+        var email = $("#email").val();
+        var proForm = $("#proForm");
+
+        
+
+        // if (userName.val() === "") {
+        //     return;
+        // } else if (nickName.val() === "") {
+        //     return;
+        // } else if (firstName.val() === "") {
+        //     return;
+        // } else if (lastName.val() === "") {
+        //     return;
+        // } else if (email.val() === "") {
+        //     return;
+        // };
 
 
-    if (updating) {
-        newProfile.id = profileId;
-        updateProfile(newProfile);
-    }
-    else{
-        submitProfile(newProfile);
-    }
+        var newProfile = {
+            userName: userName,
+            nickName: nickName,
+            firstName: firstName,
+            lastName: lastName,
+            email: email
+        };
+
+        console.log(newProfile);
+
+
+        // if (updating) {
+        //     newProfile.id = profileId;
+        //     updateProfile(newProfile);
+        // } else {
+        //     submitProfile(newProfile);
+        // }
+
     });
 });

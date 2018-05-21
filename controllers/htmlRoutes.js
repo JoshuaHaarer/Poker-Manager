@@ -16,6 +16,7 @@ module.exports = function(app) {
     })
 
     app.get('/createprofile', function(req, res) {
+        console.log(__dirname);
         res.sendFile(path.join(__dirname + "/../views/user-input.html"));
     })
 }

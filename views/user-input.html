@@ -8,65 +8,106 @@
         crossorigin="anonymous">
     <title>Poker Tournament Manager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../public/css/user-input.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../public/js/player.js"></script>
-    <script src="./assets/javascript/poker.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/user-input.css" />
+
 </head>
 
-<body style="align-content: center">
 
-    <body background="../images/redchips.jpg">
-        <div class = "container">
-        <form>
-            <div class="form-row">
-                <div class="col-md-4 mb-3">
-                    <label for="validationDefault01" style="color: white">First name</label>
-                    <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="Jeffery" required>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-md-4 mb-3">
-                    <label for="validationDefault02" style="color: white">Last name</label>
-                    <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="Lebowski" required>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-md-4 mb-3">
-                    <label for="validationDefault03" style="color: white">User Name</label>
-                    <input type="text" class="form-control" id="validationDefault03" placeholder="User Name" value="The Dude" required>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-md-4 mb-3">
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1" style="color: white">Email address</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 20px;">
+        <a class="navbar-brand" href="#">Poker Manager</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active profile">
+                    <a class="nav-link" href="">Login
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <body background="images/green.jpg">
+        <div class="container">
+            <div id="account" style="color:white; font-size:30px;margin-bottom:20px;">Create account</div>
+            <form>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault02" style="color: white">Nick Name</label>
+                        <input type="text" class="form-control" id="nickName" placeholder="Other players will see this" value="" required>
                     </div>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="col-md-4 mb-3">
-                    <label for="inputPassword5" style="color: white">Password</label>
-                    <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
-                    <small id="passwordHelpBlock" class="form-text text-muted">
-                        Your password must be at least 6 characters long.
-                    </small>
+                <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="validationDefault03" style="color: white">User Name</label>
+                            <input type="text" class="form-control" id="userName" placeholder="Account name" value="" required>
+                        </div>
+                    </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01" style="color: white">First name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="First name" value="" required>
+                    </div>
                 </div>
-            </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault02" style="color: white">Last name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Last name" value="" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1" style="color: white">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="inputPassword5" style="color: white">Password</label>
+                        <input type="password" id="createPassword" class="form-control" aria-describedby="passwordHelpBlock">
+                        <small id="passwordHelpBlock" class="form-text text-muted">
+                            Your password must be at least 6 characters long.
+                        </small>
+                    </div>
+                </div>
 
-            <button class="btn btn-primary push_button red" type="submit">Submit Profile</button>
-        </form>
-        <br>
-        <br>
-        <form>
-            <div class = "row" id = "sign-in">
-            <div class="col-md-4 mb-3">
-                <label for="validationDefault04" style="color: white">Password</label>
-                <input type="text" class="form-control" id="validationDefault04" placeholder="password" value="" required>
+                <button class="btn btn-primary push_button red" type="button" id="proForm">Submit</button>
+            </form>
+            <br>
+            <br>
+            <form>
+                <div class="row" id="sign-in">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault04" style="color: white">Password</label>
+                        <input type="text" class="form-control" id="validationDefault04" placeholder="password" value="" required>
+                    </div>
+                    <button class="btn btn-primary push_button blue" type="submit">Login</button>
+            </form>
             </div>
-            <button class="btn btn-primary push_button blue" type="submit">Login</button>
-        </form>
         </div>
-        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/player.js"></script>
+        <script src="js/profile.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
     </body>
