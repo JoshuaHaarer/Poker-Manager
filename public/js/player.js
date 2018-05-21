@@ -6,6 +6,7 @@ $(document).ready(function () {
     if (url.indexOf("?post_id=") !== -1) {
         profileId = url.split("=")[1];
         getPostData(postId);
+        console.log(postId);
     }
 
 
@@ -23,17 +24,17 @@ $(document).ready(function () {
 
         
 
-        // if (userName.val() === "") {
-        //     return;
-        // } else if (nickName.val() === "") {
-        //     return;
-        // } else if (firstName.val() === "") {
-        //     return;
-        // } else if (lastName.val() === "") {
-        //     return;
-        // } else if (email.val() === "") {
-        //     return;
-        // };
+        if (userName === "") {
+            return;
+        } else if (nickName === "") {
+            return;
+        } else if (firstName === "") {
+            return;
+        } else if (lastName === "") {
+            return;
+        } else if (email === "") {
+            return;
+        };
 
 
         var newProfile = {
@@ -45,6 +46,7 @@ $(document).ready(function () {
         };
 
         console.log(newProfile);
+        
 
 
         // if (updating) {
