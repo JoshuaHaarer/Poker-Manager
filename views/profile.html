@@ -17,7 +17,7 @@
 
 <body>
 
-  <body background="../images/redchips.jpg">
+  <body background="../public/images/redchips.jpg">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 20px;">
       <a class="navbar-brand" href="#">{{username}}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
@@ -28,7 +28,7 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="/">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -69,9 +69,9 @@
                           <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" style="width:100px; opacity: 1;">
-                          <li>
+                          <li onclick='changeImage("../public/images/homer.jpg");'>
                             <a href="">
-                              <img src="../images/homer.jpg" style="max-width: 50px; max-height: 50px; opacity: 1 !important;" onclick='changeImage("../images/homer.jpg");'
+                              <img src="../public/images/homer.jpg" style="max-width: 50px; max-height: 50px; " onclick='changeImage("../public/images/homer.jpg");'
                               />
                             </a>
                           </li>
@@ -79,7 +79,7 @@
 
                           <li>
                             <a href="">
-                              <img src="../images/freaky.jpg" style="max-width: 50px; max-height: 50px; " onclick='changeImage("../images/freaky.jpg");'
+                              <img src="../public/images/freaky.jpg" style="max-width: 50px; max-height: 50px; " onclick='changeImage("../public/images/freaky.jpg");'
                               />
                             </a>
                           </li>
@@ -87,22 +87,27 @@
 
                           <li>
                             <a href="">
-                              <img src="../images/rick.png" style="max-width: 50px; max-height: 50px;" onclick='changeImage("../images/rick.png");' />
+                              <img src="../public/images/rick.png" style="max-width: 50px; max-height: 50px;" onclick='changeImage("../public/images/rick.png");'
+                              />
                             </a>
                           </li>
                           <br>
                           <li>
                             <a href="">
-                              <img src="../images/tom.jpg" style="max-width: 50px; max-height: 50px;" onclick='changeImage("../images/tom.jpg");' />
+                              <img src="../public/images/tom.jpg" style="max-width: 50px; max-height: 50px;" onclick='changeImage("../public/images/tom.jpg");'
+                              />
                             </a>
                           </li>
                         </ul>
                       </div>
                       <button type="button" class="btn btn-success saveProfile" style="visibility: hidden;">Save</button>
-
-
-
-                      </script>
+                      <!-- <script>
+                        function changeImage(a) {
+                          event.preventDefault();
+                          document.getElementById("profile-image1").src = a;
+                          console.log(a);
+                        };
+                      </script> -->
 
                       <br>
 
