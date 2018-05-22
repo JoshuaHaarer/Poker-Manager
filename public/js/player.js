@@ -21,6 +21,7 @@ $(document).ready(function () {
         var firstName = $("#firstName").val();
         var lastName = $("#lastName").val();
         var email = $("#email").val();
+        var password = $("#createPassword").val();
 
         //Submit button
         var proForm = $("#proForm");
@@ -46,14 +47,23 @@ $(document).ready(function () {
 
 
         var newProfile = {
-            userName: userName.trim(),
+            username: userName.trim(),
             nickName: nickName.trim(),
-            firstName: firstName.trim(),
-            lastName: lastName.trim(),
-            email: email.trim()
+            playerFirstName: firstName.trim(),
+            playerLastName: lastName.trim(),
+            email: email.trim(),
+            password: password.trim()
         };
 
         console.log(newProfile);
+
+        $.ajax({
+            url: '/api/profiles/create',
+            method: 'POST',
+            data: newProfile
+        }).then(function(response) {
+            console.log(response);
+        })
         
 
 
