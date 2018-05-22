@@ -3,13 +3,13 @@ module.exports = function (sequelize, DataTypes) {
 
     var Profile = sequelize.define("playerProfile", {
 
-        email: {
+        /*email: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
-        },
+        },*/
         playerFirstName: {
             type: DataTypes.STRING,
             allowNull: false,
