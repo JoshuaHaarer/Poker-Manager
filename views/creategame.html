@@ -8,7 +8,7 @@
     <title>Create Game</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
-    <link rel="stylesheet" type="text/html" href="../public/css/tableBasic.css">
+    <link rel="stylesheet" href="/./css/tableBasic.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -19,10 +19,34 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 20px;" style="width:100%;">
+        <a class="navbar-brand" href="#">Poker Manager</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active profile">
+                    <a class="nav-link" href="">Login
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="container mt-5">
             <div class="row">
-                <div class="col-12" id="selected-players">
+                <div class="col-12" id="player-list">
 
                 </div>
             </div>
@@ -42,7 +66,7 @@
                         <header>
                             <span>Min Seats/Table:</span>
                             <input type="number" ng-model="options.seats" ng-init="options.seats=5" />
-                            <button class="btn btn-success" ng-click="generate()">Generate Tables</button>
+                            <button class="btn btn-success mt-1" ng-click="generate()">Generate Tables</button>
                         </header>
                         <ul>
                             <li ng-repeat="table in tables">
@@ -52,7 +76,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="container" id="player-list">
+                <div class="container" id="selected-players">
 
                 </div>
 
@@ -108,7 +132,7 @@
                         results.forEach(function (profile) {
                             var button = $("<button>");
                             button.text(profile.nickName);
-                            button.addClass("btn btn-primary profile-button");
+                            button.addClass("btn btn-danger profile-button m-1");
                             button.attr('data-id', profile.id);
                             button.attr('data-selected', false)
                             $("#player-list").append(button);
@@ -120,9 +144,13 @@
                             if (selected === 'false') {
                                 $(this).attr('data-selected', true);
                                 $("#selected-players").append($(this));
+                                $(this).toggleClass("btn-danger");
+                                $(this).toggleClass("btn-primary");
                             } else {
                                 $(this).attr('data-selected', false)
                                 $("#player-list").append($(this));
+                                $(this).toggleClass("btn-danger");
+                                $(this).toggleClass("btn-primary");
                             }
 
                         });

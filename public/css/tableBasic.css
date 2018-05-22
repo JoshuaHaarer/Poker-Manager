@@ -2,6 +2,12 @@ html, body {
     font-family: helvetica neue, arial;
 }
 
+body {
+    background-image: url("../images/green.jpg");
+    background-size: cover;
+    color:#FF9800;
+}
+
 input, button {
     font-family: helvetica neue, arial;
     font-size: 16px;
@@ -15,6 +21,7 @@ button {
 
 .table > header {
     padding: 3px;
+    
 }
 .table > header input {
     border: 1px solid #ccc;
@@ -26,6 +33,7 @@ ul,li {
     list-style: none;
     padding: 0;
     margin: 0;
+    float: left;
 }
 li {
     float: left;
@@ -36,8 +44,14 @@ li {
 li header {
     background: #ddd;
     padding: 3px;
+    color: black;
 }
 
 .person {
     padding: 3px;
 }
+
+.profile-button {
+    margin: 5px;
+}
+
