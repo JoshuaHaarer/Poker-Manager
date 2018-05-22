@@ -4,9 +4,9 @@ var passport = require("passport");
 var LocalStrategy = require('passport-local').Strategy;
 var expressValidator = require('express-validator');
 
-
 module.exports = function (app) {
-
+    app.use(passport.initialize());
+    app.use(passport.session());
 
     //GET route for all games
     app.get('/api/games', function (req, res) {
@@ -15,28 +15,29 @@ module.exports = function (app) {
                 res.json(dbGame)
             })
     });
-    app.get('/profile/:id', function (req, res) {
-        var id = req.params.id;
+    app.get('/profile/:username', function (req, res) {
+        var username = req.params.username;
         db.playerProfile.findOne({
             where: {
-                id: id
+                username: username
             },
         })
-            .then(function(results){
+            .then(function (results) {
                 console.log(results.dataValues);
                 var hbsObject = {
                     id: results.dataValues.id,
-                    email : results.dataValues.email,
-                    username : results.dataValues.username,
-                    ranking : results.dataValues.ranking,
-                    playerFirstName : results.dataValues.playerFirstName,
-                    playerLastName : results.dataValues.playerLastName,
-                    totalWins : results.dataValues.totalWins,
-                    knockouts : results.dataValues.knockouts
+                    email: results.dataValues.email,
+                    username: results.dataValues.username,
+                    ranking: results.dataValues.ranking,
+                    playerFirstName: results.dataValues.playerFirstName,
+                    playerLastName: results.dataValues.playerLastName,
+                    totalWins: results.dataValues.totalWins,
+                    knockouts: results.dataValues.knockouts
                 };
+                res.setHeader("Content-Type", "text/html");
                 res.render('../views/profile.handlebars', hbsObject)
             })
-           
+
     });
 
     //GET route for all profiles
@@ -102,18 +103,20 @@ module.exports = function (app) {
     });
     passport.use(new LocalStrategy(
         function (username, password, done) {
-            db.Profile.findOne({where: {
-                username : username
-            }}).then(function(user) {
+            db.playerProfile.findOne({
+                where: {
+                    username: username
+                }
+            }).then(function (user) {
                 if (user == null) {
-                    return done(null, false, {message: 'User not found'})
+                    return done(null, false, { message: 'User not found' })
                 }
 
                 if (user.password == password) {
                     return done(null, user)
                 }
 
-                return done(null, false, { message: 'Incorrect credentials.'})
+                return done(null, false, { message: 'Incorrect credentials.' })
             })
         }));
 
@@ -122,11 +125,11 @@ module.exports = function (app) {
     });
 
     passport.deserializeUser(function (id, done) {
-        db.Profile.findOne({
+        db.playerProfile.findOne({
             where: {
                 'id': id
             }
-        }).then(function(user) {
+        }).then(function (user) {
             if (user == null) {
                 done(new Error('Wrong user id.'))
             }
@@ -134,29 +137,44 @@ module.exports = function (app) {
             done(null, user);
         })
     });
-    app.post('/login',
-        passport.authenticate('local', {
-            successRedirect: '/profile',
-            failureRedirect: '/login',
-            failureFlash: true
-        }),
-        function (req, res) {
-            res.redirect('/profile')
 
+    app.post('/login',
+        passport.authenticate('local'),
+        function (req, res) {
+            console.log('redirecting?');
+            console.log(req.user.username);
+            db.playerProfile.findOne({
+                where: {
+                    username: req.user.username
+                }
+            }).then(function (results) {
+                console.log(results);
+                var hbsObject = {
+                    id: results.id,
+                    email: results.email,
+                    username: results.username,
+                    ranking: results.ranking,
+                    playerFirstName: results.playerFirstName,
+                    playerLastName: results.playerLastName,
+                    totalWins: results.totalWins,
+                    knockouts: results.knockouts
+                }
+                res.render('../views/profile.handlebars', hbsObject);
+            })
         });
 
     app.put('/profile/update',
-        function(req, res) {
+        function (req, res) {
             var profilePicture = req.body.profilePicture;
             var nickName = req.body.nickName;
             var id = req.body.id;
             db.Profile.update({
-                profilePicture : profilePicture,
-                nickName : nickName
+                profilePicture: profilePicture,
+                nickName: nickName
             }, {
-                where : {
-                    id : id
-                }
-            })
+                    where: {
+                        id: id
+                    }
+                })
         });
 }
