@@ -51,7 +51,6 @@ $(document).ready(function () {
             nickName: nickName.trim(),
             playerFirstName: firstName.trim(),
             playerLastName: lastName.trim(),
-            email: email.trim(),
             password: password.trim()
         };
 
