@@ -17,14 +17,24 @@ module.exports = function (app) {
     });
     app.get('/profile/:id', function (req, res) {
         var id = req.params.id;
-
         db.playerProfile.findOne({
             where: {
                 id: id
             },
         })
             .then(function(results){
-                res.render('../views/profile.handlebars', results)
+                console.log(results.dataValues);
+                var hbsObject = {
+                    id: results.dataValues.id,
+                    email : results.dataValues.email,
+                    username : results.dataValues.username,
+                    ranking : results.dataValues.ranking,
+                    playerFirstName : results.dataValues.playerFirstName,
+                    playerLastName : results.dataValues.playerLastName,
+                    totalWins : results.dataValues.totalWins,
+                    knockouts : results.dataValues.knockouts
+                };
+                res.render('../views/profile.handlebars', hbsObject)
             })
            
     });

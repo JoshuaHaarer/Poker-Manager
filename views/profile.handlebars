@@ -5,19 +5,17 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.amd.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="../public/js/profile.js"></script>
+
+  <script src="/./js/profile.js"></script>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
     crossorigin="anonymous">
-
-  <title>{{username}}</title>
+  <title>{{profile.username}}</title>
 </head>
 
 <body>
 
-  <body background="../public/images/redchips.jpg">
+  <body background="/./images/redchips.jpg">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 20px;">
       <a class="navbar-brand" href="#">{{username}}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
@@ -69,9 +67,9 @@
                           <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" style="width:100px; opacity: 1;">
-                          <li onclick='changeImage("../public/images/homer.jpg");'>
+                          <li onclick='changeImage("/./images/homer.jpg");'>
                             <a href="">
-                              <img src="../public/images/homer.jpg" style="max-width: 50px; max-height: 50px; " onclick='changeImage("../public/images/homer.jpg");'
+                              <img src="/./images/homer.jpg" style="max-width: 50px; max-height: 50px; " onclick='changeImage("/./images/homer.jpg");'
                               />
                             </a>
                           </li>
@@ -79,7 +77,7 @@
 
                           <li>
                             <a href="">
-                              <img src="../public/images/freaky.jpg" style="max-width: 50px; max-height: 50px; " onclick='changeImage("../public/images/freaky.jpg");'
+                              <img src="/./images/freaky.jpg" style="max-width: 50px; max-height: 50px; " onclick='changeImage("/./images/freaky.jpg");'
                               />
                             </a>
                           </li>
@@ -87,15 +85,13 @@
 
                           <li>
                             <a href="">
-                              <img src="../public/images/rick.png" style="max-width: 50px; max-height: 50px;" onclick='changeImage("../public/images/rick.png");'
-                              />
+                              <img src="/./images/rick.png" style="max-width: 50px; max-height: 50px;" onclick='changeImage("/./images/rick.png");' />
                             </a>
                           </li>
                           <br>
                           <li>
                             <a href="">
-                              <img src="../public/images/tom.jpg" style="max-width: 50px; max-height: 50px;" onclick='changeImage("../public/images/tom.jpg");'
-                              />
+                              <img src="/./images/tom.jpg" style="max-width: 50px; max-height: 50px;" onclick='changeImage("/./images/tom.jpg");' />
                             </a>
                           </li>
                         </ul>
