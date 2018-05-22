@@ -62,7 +62,7 @@ module.exports = function (app) {
 
     // Register User
     app.post('/api/profiles/create', function (req, res) {
-        var email = req.body.email;
+        //var email = req.body.email;
         var username = req.body.username;
         var password = req.body.password;
         var playerFirstName = req.body.playerFirstName;
@@ -71,8 +71,8 @@ module.exports = function (app) {
 
         // Validation
         req.checkBody('username', 'Username is Required').notEmpty();
-        req.checkBody('email', 'Email is required').notEmpty();
-        req.checkBody('email', 'Email is not valid').isEmail();
+        //req.checkBody('email', 'Email is required').notEmpty();
+        //req.checkBody('email', 'Email is not valid').isEmail();
         req.checkBody('password', 'Password is required').notEmpty();
         req.checkBody('playerFirstName', "Player first name must not be blank").notEmpty();
         req.checkBody('playerLastName', "Player last name must not be blank").notEmpty();
@@ -87,7 +87,7 @@ module.exports = function (app) {
             console.log(errors);
         } else {
             db.playerProfile.create({
-                email: email,
+                //email: email,
                 username: username,
                 password: password,
                 playerFirstName: playerFirstName,
@@ -151,7 +151,7 @@ module.exports = function (app) {
                 console.log(results);
                 var hbsObject = {
                     id: results.id,
-                    email: results.email,
+                    //email: results.email,
                     username: results.username,
                     ranking: results.ranking,
                     playerFirstName: results.playerFirstName,
