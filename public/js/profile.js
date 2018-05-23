@@ -1,11 +1,11 @@
 $(document).ready(function(){
 
 
-function changeImage(a) {
-  event.preventDefault();
-  document.getElementById("profile-image1").src = a;
-  console.log(a);
-};
+// function changeImage(a) {
+//   event.preventDefault();
+//   document.getElementById("profile-image1").src = a;
+//   console.log(a);
+// };
 
 $(".profile").on("click", function () {
   event.preventDefault();
