@@ -26,7 +26,7 @@ module.exports = function (app) {
                 console.log(results.dataValues);
                 var hbsObject = {
                     id: results.dataValues.id,
-                    email: results.dataValues.email,
+                    //email: results.dataValues.email,
                     username: results.dataValues.username,
                     ranking: results.dataValues.ranking,
                     playerFirstName: results.dataValues.playerFirstName,
