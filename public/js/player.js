@@ -62,6 +62,7 @@ $(document).ready(function () {
             data: newProfile
         }).then(function(response) {
             console.log(response);
+            alert('Account created successfully. You can now log in.');
         })
         
 
