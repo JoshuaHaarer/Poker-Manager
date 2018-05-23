@@ -1,6 +1,9 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var expressValidator = require('express-validator');
+var expect = require("chai").expect;
+var should = require('chai').should();
+// var url = window.location.href;
 
 var PORT = process.env.PORT || 8080;
 
@@ -34,4 +37,16 @@ db.sequelize.sync({}).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
+
+//   describe("GET /login", function(){
+//     it("should render the login page after clicking the log-in button", function(done){
+//         request.get('/login')
+//         .expect(200)
+//         .end(function(err, result){
+//             expect.url.to.equal('http://localhost:8080/login');
+//             done(err);
+//         })
+//     })
+// })
+
 });
