@@ -9,36 +9,15 @@ $(document).ready(function () {
         console.log(postId);
     }
 
+    
+    function changeImage(a) {
+        event.preventDefault();
+        document.getElementById("profile-image1").src = a;
+        console.log(a);
+      };
+    
 
-    module.exports = function testProfile(){
-        $(proForm).on("click", function () {
-            event.preventDefault();
     
-            //User input values
-            var userName = $("#userName").val();
-            var nickName = $("#nickName").val();
-            var firstName = $("#firstName").val();
-            var lastName = $("#lastName").val();
-            var email = $("#email").val();
-            var password = $("#createPassword").val();
-    
-            //Submit button
-            var proForm = $("#proForm");
-
-            var newProfile = {
-                username: userName.trim(),
-                nickName: nickName.trim(),
-                playerFirstName: firstName.trim(),
-                playerLastName: lastName.trim(),
-                password: password.trim()
-            };
-    
-            console.log(newProfile);
-    
-    
-    }
-        )};
-
     $(proForm).on("click", function () {
         event.preventDefault();
 
