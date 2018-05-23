@@ -12,6 +12,9 @@ module.exports = function (app) {
         console.log(name);
         res.render(path.join(__dirname + "/../views/profile.handlebars"));
     }) */
+    app.get('/gametimer', function(req, res) {
+        res.sendFile(path.join(__dirname + "/../views/main.html"));
+    });
 
     app.get('/creategame', function (req, res) {
         res.sendFile(path.join(__dirname + "/../views/creategame.html"));

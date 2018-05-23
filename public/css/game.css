@@ -1,5 +1,6 @@
 body{
-    background: url("../../public/images/green.jpg");
+    background: url("../images/green.jpg");
+    color: orange;
     
 }
 .wrapper {
